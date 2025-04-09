@@ -3,10 +3,8 @@
 A Flutter application to help track and manage internship progress. This project demonstrates the basics of Flutter development, including task management and progress tracking.
 
 ## Features
-- Manage internship tasks efficiently.
-- Track progress with visual indicators.
-- User-friendly interface.
-- Cross-platform support (iOS, Android).
+- Manage internships efficiently.
+- Track progress.
 
 ## Installation
 1. Clone the repository:
