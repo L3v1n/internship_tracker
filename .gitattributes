@@ -1,0 +1,55 @@
+# Mark the project as primarily Dart
+*.dart linguist-language=Dart
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Flutter/Dart specific
+*.dart text
+*.yaml text
+*.json text
+*.md text
+*.gradle text
+*.properties text
+*.xml text
+*.html text
+*.css text
+*.js text
+
+# Files and directories that should be excluded from language statistics
+*.h linguist-detectable=false
+*.cc linguist-detectable=false
+*.cpp linguist-detectable=false
+*.cmake linguist-detectable=false
+Makefile linguist-detectable=false
+CMakeLists.txt linguist-detectable=false
+**/android/gradlew linguist-detectable=false
+**/ios/Flutter/Flutter.xcconfig linguist-detectable=false
+**/ios/Flutter/Generated.xcconfig linguist-detectable=false
+**/ios/Runner.xcworkspace/** linguist-detectable=false
+**/ios/Runner.xcodeproj/** linguist-detectable=false
+
+# Android specific
+*.java text
+*.kt text
+*.kts text
+
+# iOS specific
+*.swift text
+*.h text
+*.m text
+*.mm text
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Documents
+*.pdf binary
+
+# Gradle wrapper
+*.jar binary
