@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:internship_tracker/add_intern/view/add_intern_page.dart';
 
 class InternshipTracker extends StatefulWidget {
   const InternshipTracker({super.key});
@@ -23,7 +22,7 @@ class _InternshipTrackerState extends State<InternshipTracker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: const Text('You have no internship yet!')),
+            Center(child: const Text('You have no internships yet!')),
             const SizedBox(height: 20),
           ],
         ),
@@ -31,14 +30,13 @@ class _InternshipTrackerState extends State<InternshipTracker> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final update = await context.push('/add_intern');
-          if (update != null) {
-          }
+          if (update != null) {}
         },
         backgroundColor:
             Theme.of(context).brightness == Brightness.dark
                 ? Colors.white
                 : Colors.black,
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         child: Icon(
           Icons.add,
           color:
