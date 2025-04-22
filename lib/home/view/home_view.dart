@@ -48,20 +48,3 @@ class _InternshipTrackerState extends State<InternshipTracker> {
     );
   }
 }
-
-class CustomSnackBar extends StatelessWidget {
-  final String text;
-  const CustomSnackBar({super.key, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return SnackBar(
-      content: Text(text),
-      width: 300,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      behavior: SnackBarBehavior.floating,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-      duration: const Duration(seconds: 2),
-    );
-  }
-}

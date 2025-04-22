@@ -1,24 +1,40 @@
 part of 'add_intern_bloc.dart';
 
-sealed class AddInternState {}
-
-final class AddInternDate extends AddInternState {
+sealed class AddInternState {
   final DateTime? startDate;
-  final String? startDateFormatted;
-  final String? dateError;
+  final String companyName;
+  final String requiredHours;
 
-  AddInternDate({this.startDate, this.startDateFormatted, this.dateError});
-  AddInternDate copyWith({
+  AddInternState({
+    this.startDate,
+    this.companyName = '',
+    this.requiredHours = '',
+  });
+
+  AddInternState copyWith({
     DateTime? startDate,
-    String? startDateFormatted,
-    String? dateError,
+    String? companyName,
+    String? requiredHours,
+  });
+}
+
+final class AddInternInitial extends AddInternState {
+  AddInternInitial({
+    super.startDate,
+    super.companyName = '',
+    super.requiredHours = '',
+  });
+  
+  @override
+  AddInternInitial copyWith({
+    DateTime? startDate,
+    String? companyName,
+    String? requiredHours,
   }) {
-    return AddInternDate(
+    return AddInternInitial(
       startDate: startDate ?? this.startDate,
-      startDateFormatted: startDateFormatted ?? this.startDateFormatted,
-      dateError: dateError ?? this.dateError,
+      companyName: companyName ?? this.companyName,
+      requiredHours: requiredHours ?? this.requiredHours,
     );
   }
 }
-
-final class AddInternInitial extends AddInternState {}

@@ -1,24 +1,55 @@
 import 'package:bloc/bloc.dart';
-import 'package:intl/intl.dart';
+import '../../models/internship_model.dart';
+import '../../repository/repository.dart';
 
 part 'add_intern_event.dart';
 part 'add_intern_state.dart';
 
 class AddInternBloc extends Bloc<AddInternEvent, AddInternState> {
-  final DateFormat _dateFormat = DateFormat('MM/dd/yyyy');
+  final InternshipRepository repository;
 
-  AddInternBloc() : super(AddInternInitial()) {
-    on<OpenStartDatePicker>(_onOpenStartDatePicker);
-    on<StartDateSelected>(_onStartDateSelected);
+  AddInternBloc({required this.repository}) : super(AddInternInitial()) {
+    on<AddInternStartDateChanged>(_onStartDateChanged);
+    on<AddInternCompanyNameChanged>(_onCompanyNameChanged);
+    on<AddInternRequiredHoursChanged>(_onRequiredHoursChanged);
+    on<SaveInternship>(_onSaveInternship);
   }
 
-  Future<void> _onOpenStartDatePicker(
-    OpenStartDatePicker event,
+  void _onStartDateChanged(
+    AddInternStartDateChanged event,
     Emitter<AddInternState> emit,
-  ) async {}
+  ) {
+    emit(state.copyWith(startDate: event.date));
+  }
 
-  Future<void> _onStartDateSelected(
-    StartDateSelected event,
+  void _onCompanyNameChanged(
+    AddInternCompanyNameChanged event,
     Emitter<AddInternState> emit,
-  ) async {}
+  ) {
+    emit(state.copyWith(companyName: event.name));
+  }
+
+  void _onRequiredHoursChanged(
+    AddInternRequiredHoursChanged event,
+    Emitter<AddInternState> emit,
+  ) {
+    emit(state.copyWith(requiredHours: event.hours));
+  }
+
+  void _onSaveInternship(
+    SaveInternship event,
+    Emitter<AddInternState> emit,
+  ) async {
+    if (state.companyName.isNotEmpty &&
+        state.startDate != null &&
+        state.requiredHours.isNotEmpty) {
+      final internship = InternshipModel(
+        companyName: state.companyName,
+        startDate: state.startDate!,
+        requiredHours: int.tryParse(state.requiredHours) ?? 0,
+      );
+
+      await repository.addInternship(internship);
+    }
+  }
 }
