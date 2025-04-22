@@ -31,11 +31,6 @@ pubspec.yaml linguist-language=YAML
 *.lock linguist-generated=true
 **/.dart_tool/** linguist-generated=true
 **/build/** linguist-generated=true
-
-# Mark generated files so GitHub doesn't count them in language stats
-*.g.dart linguist-generated=true
-*.freezed.dart linguist-generated=true
-/lib/generated_plugin_registrant.dart linguist-generated=true
 **/ios/Flutter/App.framework/** linguist-generated=true
 **/ios/Flutter/Flutter.framework/** linguist-generated=true
 
@@ -45,23 +40,12 @@ pubspec.yaml linguist-language=YAML
 **/android/gradlew linguist-vendored
 **/android/gradlew.bat linguist-vendored
 **/android/gradle/wrapper/** linguist-vendored
-/android/gradle-wrapper.jar linguist-generated=true
 
 # iOS
 *.swift linguist-language=Swift
 *.h linguist-language=Objective-C
 *.m linguist-language=Objective-C
-/ios/Flutter/flutter_export_environment.sh linguist-generated=true
-/ios/Flutter/Generated.xcconfig linguist-generated=true
-/ios/Runner/GeneratedPluginRegistrant.* linguist-generated=true
 
 # Generated plugin registrant files
 **/generated_plugin_registrant.dart linguist-generated=true
 **/GeneratedPluginRegistrant.* linguist-generated=true
-/macos/Flutter/GeneratedPluginRegistrant.* linguist-generated=true
-/windows/flutter/generated_plugin_registrant.* linguist-generated=true
-/linux/flutter/generated_plugin_registrant.* linguist-generated=true
-
-# Don't count third party code
-/ios/Pods/ linguist-vendored
-/android/.gradle/ linguist-vendored

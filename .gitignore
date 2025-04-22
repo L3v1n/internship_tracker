@@ -51,11 +51,6 @@
 **/ios/.generated/
 **/ios/Flutter/Generated.xcconfig
 **/ios/Flutter/flutter_export_environment.sh
-**/ios/Flutter/app.flx
-**/ios/Flutter/app.zip
-**/ios/Flutter/flutter_assets/
-**/ios/ServiceDefinitions.json
-**/ios/Runner/GeneratedPluginRegistrant.*
 
 # macOS specific
 **/macos/Flutter/ephemeral
@@ -65,9 +60,6 @@
 **/windows/flutter/ephemeral
 **/windows/flutter/generated_plugins.cmake
 **/windows/flutter/generated_plugin_registrant.*
-
-# Linux specific
-**/linux/flutter/generated_plugin_registrant.*
 
 # Web specific
 **/web/favicon.png
@@ -81,21 +73,11 @@
 **/*.iws
 **/.DS_Store
 **/Thumbs.db
-.classpath
-.project
-.settings/
 
 # Coverage information
 **/coverage/
 **/.test_coverage.dart
 **/lcov.info
-
-# Obfuscation related
-app.*.map.json
-
-# Environment files with secrets
-.env
-.env.local
 
 # Exceptions to above rules
 !**/ios/**/default.pbxuser
