@@ -73,9 +73,11 @@ class _AddInternViewState extends State<AddInternView> {
                   TextFormField(
                     controller: _hoursController,
                     keyboardType: TextInputType.number,
+                    maxLength: 4,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Required Render Hours',
+                      counterText: '',
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {

@@ -1,21 +1,63 @@
-# Auto detect text files and perform LF normalization
+# Auto detect text files and perform normalization
 * text=auto
 
-# Mark Dart files as Dart language
+# Explicitly declare text files to ensure consistent line endings
+*.dart text
+*.yaml text
+*.yml text
+*.json text
+*.html text
+*.md text
+*.txt text
+*.gradle text
+*.properties text
+*.xml text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Flutter/Dart specific
 *.dart linguist-language=Dart
+pubspec.yaml linguist-language=YAML
+*.lock linguist-generated=true
+**/.dart_tool/** linguist-generated=true
+**/build/** linguist-generated=true
 
 # Mark generated files so GitHub doesn't count them in language stats
 *.g.dart linguist-generated=true
 *.freezed.dart linguist-generated=true
 /lib/generated_plugin_registrant.dart linguist-generated=true
+**/ios/Flutter/App.framework/** linguist-generated=true
+**/ios/Flutter/Flutter.framework/** linguist-generated=true
 
-# Mark generated platform-specific files
+# Android
+*.kt linguist-language=Kotlin
+*.java linguist-language=Java
+**/android/gradlew linguist-vendored
+**/android/gradlew.bat linguist-vendored
+**/android/gradle/wrapper/** linguist-vendored
 /android/gradle-wrapper.jar linguist-generated=true
-/android/gradlew linguist-generated=true
-/android/gradlew.bat linguist-generated=true
+
+# iOS
+*.swift linguist-language=Swift
+*.h linguist-language=Objective-C
+*.m linguist-language=Objective-C
 /ios/Flutter/flutter_export_environment.sh linguist-generated=true
 /ios/Flutter/Generated.xcconfig linguist-generated=true
 /ios/Runner/GeneratedPluginRegistrant.* linguist-generated=true
+
+# Generated plugin registrant files
+**/generated_plugin_registrant.dart linguist-generated=true
+**/GeneratedPluginRegistrant.* linguist-generated=true
 /macos/Flutter/GeneratedPluginRegistrant.* linguist-generated=true
 /windows/flutter/generated_plugin_registrant.* linguist-generated=true
 /linux/flutter/generated_plugin_registrant.* linguist-generated=true

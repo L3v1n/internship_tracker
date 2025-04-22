@@ -1,56 +1,43 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# Visual Studio Code related
-.classpath
-.project
-.settings/
-.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
+# Dart/Flutter specific
+**/build/
 **/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-/build/
-pubspec.lock
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/generated_plugin_registrant.*
+**/.pub/
+**/pubspec.lock
+**/doc/api/
+**/.pub-cache/
 
-# Symbolication related
-app.*.symbols
+# Symbols
+**/app.*.symbols
 
-# Obfuscation related
-app.*.map.json
+# Android specific
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.*
+**/*.apk
+**/*.aab
+**/*.ipa
+**/*.ap_
+**/*.jks
+**/*.keystore
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# iOS/XCode related
-**/ios/**/*.mode1v3
-**/ios/**/*.mode2v3
-**/ios/**/*.moved-aside
-**/ios/**/*.pbxuser
-**/ios/**/*.perspectivev3
+# iOS specific
+**/ios/Flutter/ephemeral
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/*.mode1v3
+**/ios/*.mode2v3
+**/ios/*.moved-aside
+**/ios/*.pbxuser
+**/ios/*.perspectivev3
 **/ios/**/*sync/
 **/ios/**/.sconsign.dblite
 **/ios/**/.tags*
@@ -62,28 +49,57 @@ app.*.map.json
 **/ios/**/profile
 **/ios/**/xcuserdata
 **/ios/.generated/
-**/ios/Flutter/App.framework
-**/ios/Flutter/Flutter.framework
-**/ios/Flutter/Flutter.podspec
 **/ios/Flutter/Generated.xcconfig
-**/ios/Flutter/ephemeral
+**/ios/Flutter/flutter_export_environment.sh
 **/ios/Flutter/app.flx
 **/ios/Flutter/app.zip
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
-# macOS
-**/macos/Flutter/GeneratedPluginRegistrant.swift
+# macOS specific
 **/macos/Flutter/ephemeral
+**/macos/Flutter/GeneratedPluginRegistrant.*
 
-# Web related
+# Windows specific
+**/windows/flutter/ephemeral
+**/windows/flutter/generated_plugins.cmake
+**/windows/flutter/generated_plugin_registrant.*
+
+# Linux specific
+**/linux/flutter/generated_plugin_registrant.*
+
+# Web specific
 **/web/favicon.png
 **/web/icons/
 
-# Coverage
-coverage/
+# IDE specific
+**/.idea/
+**/.vscode/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/.DS_Store
+**/Thumbs.db
+.classpath
+.project
+.settings/
+
+# Coverage information
+**/coverage/
+**/.test_coverage.dart
+**/lcov.info
+
+# Obfuscation related
+app.*.map.json
 
 # Environment files with secrets
 .env
 .env.local
+
+# Exceptions to above rules
+!**/ios/**/default.pbxuser
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.perspectivev3
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
